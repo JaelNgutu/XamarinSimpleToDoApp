@@ -31,5 +31,12 @@ namespace XamarinToDo.ViewModel
         {
             TodoItems.Add(new TodoItem(NewTodoText, false));
         }
+
+        public ICommand RemoveTodoCommand => new Command(RemoveTodoItem);
+        void RemoveTodoItem(object o)
+        {
+            TodoItem todoItemBeingRemoved = o as TodoItem;
+            TodoItems.Remove(todoItemBeingRemoved);
+        }
     }
 }
