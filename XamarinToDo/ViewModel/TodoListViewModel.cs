@@ -15,11 +15,12 @@ namespace XamarinToDo.ViewModel
 
         public TodoListViewModel()
         {
-            TodoItems = new ObservableCollection<TodoItem>();
-
-            TodoItems.Add(new TodoItem("First Todo", true));
-            TodoItems.Add(new TodoItem("First Todo", true));
-            TodoItems.Add(new TodoItem("First Todo", true));
+            TodoItems = new ObservableCollection<TodoItem>
+            {
+                new TodoItem("First Todo", true),
+                new TodoItem("First Todo", true),
+                new TodoItem("First Todo", false)
+            };
         }
       
        

@@ -3,6 +3,8 @@
     x:Class="XamarinToDo.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared;assembly=Plugin.InputKit"
+    xmlns:input1="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
     xmlns:local="clr-namespace:XamarinToDo.ViewModel">
 
     <ContentPage.BindingContext>
@@ -23,6 +25,7 @@
                             Padding="20,0"
                             AlignItems="Center"
                             JustifyContent="SpaceBetween">
+                            <input1:CheckBox IsChecked="{Binding Complete}" />
                             <Label Text="{Binding TodoText}" />
                             <ImageButton
                                 BackgroundColor="Transparent"
