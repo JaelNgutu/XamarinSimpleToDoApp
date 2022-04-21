@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 using XamarinToDo.Model;
 
 namespace XamarinToDo.ViewModel
@@ -18,6 +20,16 @@ namespace XamarinToDo.ViewModel
             TodoItems.Add(new TodoItem("First Todo", true));
             TodoItems.Add(new TodoItem("First Todo", true));
             TodoItems.Add(new TodoItem("First Todo", true));
+        }
+      
+       
+
+        public ICommand AddTodoCommand => new Command(AddTodoItem);
+        public string NewTodoText { get; set; }
+
+        void AddTodoItem()
+        {
+            TodoItems.Add(new TodoItem(NewTodoText, false));
         }
     }
 }
